@@ -6,8 +6,8 @@ tar -zxvf $version.tar.gz
 mv porttran-$version/porttranfree/portdir.sh porttran-$version/porttranfree/porttran
 mkdir porttran && chmod 777 porttran
 mv porttran-$version/porttranfree/* porttran
-cd porttran-$version/porttranfree/porttran && chmod +x porttran
-cd ../..
+cd porttran/ && chmod +x porttran && chmod +x ppexec
+cd ../
 rm -rf porttran-$version
 rm $version.tar.gz
 clear
