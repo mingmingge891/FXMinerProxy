@@ -1,11 +1,3 @@
-======================================================
-   System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+
-   Description: Server port transit tool porttran
-   Version: v1.0
-   Date: 2021-12-20
-   Author: hansen
-   Web: www.transitpool.org
-======================================================
 The command
 ./portdir.sh Destination IP address of the port: port
 Step : 1
