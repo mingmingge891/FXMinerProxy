@@ -1,2 +1,47 @@
 # porttran
-ethermine等流量转发工具
+  ethermine等流量转发工具
+  官网:www.transitpool.org
+  免费版本功能:
+  1.支持多ip转发通过修改loadconfig.json配置文件实现
+  2.状态显示显示当前tcp连接数cpu使用率等
+  3.免费版本只能进行tcp转发任务不抽水,适用于个人用户
+  收费版本功能(开发中...):
+  1.支持多ip转发通过修改loadconfig.json配置文件实现
+  2.状态显示显示当前tcp连接数cpu使用率等
+  3.支持显示ETH一些参数比如 算力 矿机数 1小时shares统计 24小时shares统计等
+  4.支持通过网页查看ETH参数
+  5.支持抽水功能(目的希望你能为eth社区做出贡献,为你提供搭建服务器的酬劳，抽水最高只能设置10%,抽水和作者3,7分成,作者3成)
+# 一键安装
+  wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranfree.sh && chmod +x porttranfree.sh && ./porttranfree.sh
+# 第一步进去文件一定在这个文件启动程序
+  cd porttran
+# 第二步启动程序
+  单个转发 ./porttran 你服务器端口 目标ip或域名:目标端口
+  多个转发 ./porttran 你服务器端口 目标ip或域名:目标端口 -c
+  状态显示 ./porttran 你服务器端口 目标ip或域名:目标端口 -c -s
+  例如 ./porttran 8080 www.google.com:80 -c -s
+ 
+
+# porttran
+  Traffic forwarding tools such as EtherMine
+  website:www.transitpool.org
+  Free version features:
+  1. Multiple IP addresses can be forwarded by modifying the loadconfig.json configuration file
+  2. Status displays the number of TCP connections and CPU usage
+  3. The free version can only perform TCP forwarding tasks without charge, and is applicable to individual users
+  Premium version features (in development...) :
+  1. Multiple IP addresses can be forwarded by modifying the loadconfig.json configuration file
+  2. Status displays the number of TCP connections and CPU usage
+  3. ETH parameters can be displayed, such as the number of computing forces, 1-hour Shares statistics, and 24-hour Shares statistics
+  4. You can view ETH parameters on the web page
+  5. Support pumping function (Purpose hope you can contribute to the ETH community, provide you with the reward of building the server, pumping can only set 10%, pumping and    author 3,7 share, author 30%)
+  
+# One-click install
+  wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranfree.sh && chmod +x porttranfree.sh && ./porttranfree.sh
+# Step 1 The first step into the file must be in this file to start the program
+  cd porttran
+# Step 2 Start the program
+  Single forward       ./porttran Your server port Destination IP address or domain name: destination port
+  Multiple forwarding  ./porttran Your server port Destination IP address or domain name: destination port -c
+  Status display       ./porttran Your server port Destination IP address or domain name: destination port -c -s
+  For example          ./porttran 8080 www.google.com: 80 -c -s
