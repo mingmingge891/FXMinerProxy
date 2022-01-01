@@ -4,7 +4,7 @@ wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
 tar -zxvf $version.tar.gz
 mv porttran-$version/porttranfree/portdir.sh porttran-$version/porttranfree/porttran;chmod 777 porttran-$version/porttranfree/porttran
 mkdir porttran && chmod 777 porttran
-mv porttran-$version/porttranfree/* porttran1/
+mv porttran-$version/porttranfree/* porttran
 rm -rf porttran-$version
 rm $version.tar.gz
 clear
