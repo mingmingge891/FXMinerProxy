@@ -1,5 +1,5 @@
 #bin
-version='2.3.2'
+version='2.3.3'
 rm *.tar.gz
 rm porttranfree.sh
 wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
