@@ -1,5 +1,7 @@
 #bin
-version='2.2'
+version='2.3.2'
+rm *.tar.gz
+rm porttranfree.sh
 wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
 tar -zxvf $version.tar.gz
 mv porttran-$version/porttranfree/portdir.sh porttran-$version/porttranfree/porttran;chmod 777 porttran-$version/porttranfree/porttran
