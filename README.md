@@ -24,6 +24,7 @@
   5.支持抽水功能(目的希望你能为eth社区做出贡献,为你提供搭建服务器的酬劳，抽水最高只能设置10%,抽水和作者3,7分成,作者3成)
   
 # 一键安装
+#  免费版本
   wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranfree.sh && chmod +x porttranfree.sh && ./porttranfree.sh
 # 第一步打开文件夹,一定在这个文件启动程序
   cd porttran
@@ -40,11 +41,11 @@
 # porttran
   # Traffic forwarding tools such as EtherMine
   # website:www.transitpool.org
-  Free version features:
+# Free version features:
   1. Multiple IP addresses can be forwarded by modifying the loadconfig.json configuration file
   2. Status displays the number of TCP connections and CPU usage
   3. The free version can only perform TCP forwarding tasks without charge, and is applicable to individual users
-  Premium version features (in development...) :
+# Premium version features (in development...) :
   1. Multiple IP addresses can be forwarded by modifying the loadconfig.json configuration file
   2. Status displays the number of TCP connections and CPU usage
   3. ETH parameters can be displayed, such as the number of computing forces, 1-hour Shares statistics, and 24-hour Shares statistics
@@ -52,6 +53,7 @@
   5. Support pumping function (Purpose hope you can contribute to the ETH community, provide you with the reward of building the server, pumping can only set 10%, pumping and    author 3,7 share, author 30%)
   
 # One-click install
+# free
   wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranfree.sh && chmod +x porttranfree.sh && ./porttranfree.sh
 # Step 1 The first step is to open the folder and be sure to start the program in this file
   cd porttran
