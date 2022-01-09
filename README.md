@@ -1,5 +1,5 @@
 # porttran
-  # ethermine等流量转发工具
+  # ethermine以太坊等流量中转工具,eth端口转发，tcp端口转发，收费版本支持抽水功能，web后台界面管理
   
   # 官网:www.transitpool.org
   
