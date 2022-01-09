@@ -33,7 +33,7 @@
   
   单个转发: nohup ./porttran 你服务器端口 目标ip或域名:目标端口 &
   
-  多个转发: nohup ./porttran 你服务器端口 目标ip或域名:目标端口 -c &
+  多个转发: nohup ./porttran 你服务器端口 目标ip或域名:目标端口 -c &    （多个转发你需要修改localconfig.json 配置文件）
   
   例如: nohup ./porttran 8080 www.google.com:80 -c &
   
@@ -41,7 +41,7 @@
   
   单个转发: ./porttran 你服务器端口 目标ip或域名:目标端口
   
-  多个转发: ./porttran 你服务器端口 目标ip或域名:目标端口 -c
+  多个转发: ./porttran 你服务器端口 目标ip或域名:目标端口 -c  （多个转发你需要修改localconfig.json 配置文件）
   
   状态显示: ./porttran 你服务器端口 目标ip或域名:目标端口 -c -s
   
