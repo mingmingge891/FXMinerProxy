@@ -13,7 +13,7 @@ rm $version.tar.gz
 rm porttranfree.sh
 clear
 echo "======================================="
-echo -e "\033[40;37mSystem Required: CentOS 7+ / Debian 8+ / Ubuntu 16+ \033[0m"
+echo -e "\033[40;37m System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+ \033[0m"
 echo -e "\033[40;37m Version:$version \033[0m"
 echo -e "\033[42;37m download complete,please perform the following steps \033[0m"
 echo "SSH remote login:"
