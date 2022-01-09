@@ -1,5 +1,5 @@
 #bin
-version='2.4'
+version='2.4.1'
 rm *.tar.gz
 wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
 tar -zxvf $version.tar.gz
