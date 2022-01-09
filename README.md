@@ -29,6 +29,16 @@
 # 第一步打开文件夹,一定在这个文件启动程序
   cd porttran
 # 第二步启动程序
+  # SSH登陆请按照下面方式执行
+  
+  单个转发: nohup ./porttran 你服务器端口 目标ip或域名:目标端口 &
+  
+  多个转发: nohup ./porttran 你服务器端口 目标ip或域名:目标端口 -c &
+  
+  例如: nohup ./porttran 8080 www.google.com:80 -c &
+  
+  # VNC登陆请按照下面方式执行
+  
   单个转发: ./porttran 你服务器端口 目标ip或域名:目标端口
   
   多个转发: ./porttran 你服务器端口 目标ip或域名:目标端口 -c
