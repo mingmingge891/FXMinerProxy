@@ -21,7 +21,7 @@
   
   4.支持通过网页查看ETH参数
   
-  5.支持抽水功能(目的希望你能为eth社区做出贡献,为你提供搭建服务器的酬劳，抽水最高只能设置10%,抽水和作者3,7分成,作者3成)
+  5.支持抽水功能(抽水最高只能设置10%)，我们不单独从软件进行抽水，软件为一次性收费，你需要购买激活码才能使用
   
 # 一键安装
 #  免费版本
@@ -50,7 +50,7 @@
   2. Status displays the number of TCP connections and CPU usage
   3. ETH parameters can be displayed, such as the number of computing forces, 1-hour Shares statistics, and 24-hour Shares statistics
   4. You can view ETH parameters on the web page
-  5. Support pumping function (Purpose hope you can contribute to the ETH community, provide you with the reward of building the server, pumping can only set 10%, pumping and    author 3,7 share, author 30%)
+  5. Support pumping function (pumping can only set 10%)We do not pump water separately from the software, the software is a one-time charge, you need to purchase the activation   code to use
   
 # One-click install
 # free
