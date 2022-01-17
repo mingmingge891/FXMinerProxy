@@ -1,3 +1,11 @@
+======================================================
+   System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+
+   Description: Server port transit tool porttran
+   Version: v1.0
+   Date: 2021-12-20
+   Author: hansen
+   Web: www.transitpool.org
+======================================================
 The command
 ./portdir.sh Destination IP address of the port: port
 Step : 1
@@ -57,3 +65,9 @@ Step : 2
 命令说明 
 -s 打开状态显示如TCP的连接数等
 -c 加载配置文件比如要启动多个转换是就要加这个命令
+-log 日志保存到本地porttran.log 关闭控制输出
+-eth 打开eth状态等显示
+
+web界面
+
+web界面默认端口为62000 输入ip:62000访问(请打开62000端口的访问权限) 可以通过修改配置文件改变端口
