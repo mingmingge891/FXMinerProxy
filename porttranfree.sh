@@ -1,5 +1,5 @@
 #bin
-version='2.4.1'
+version='3.0'
 rm *.tar.gz
 wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
 tar -zxvf $version.tar.gz
@@ -13,8 +13,8 @@ rm $version.tar.gz
 rm porttranfree.sh
 clear
 echo "======================================="
-echo -e "\033[43;37m System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+ \033[0m"
-echo -e "\033[43;37m Version:$version \033[0m"
+echo -e "\033[42;37m System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+ \033[0m"
+echo -e "\033[42;37m Version:$version \033[0m"
 echo -e "\033[42;37m download complete,please perform the following steps \033[0m"
 echo "SSH remote login:"
 echo "step:1 cd porttran/"
@@ -32,6 +32,8 @@ echo "第三步: exit (一定要通过exit退出不然下次登陆时程序会�
 echo "如果通过VNC远程登陆: "
 echo "第一步: cd porttran/"
 echo "第二步: ./porttran 端口 目标ip或者域名:端口 -s"
+echo "======================================="
+echo "web默认端口是:62000,通过修改配置文件改变端口"
 echo "查看更多帮助打开 readme.txt"
 echo "======================================="
 
