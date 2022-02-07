@@ -58,8 +58,8 @@ uninstall() {
 }
 start() {
     cd /etc/porttran
-   ./porttran -c &
-   #setsid /etc/porttran/porttran &
+   #./porttran -c &
+   setsid ./porttran &
 }
 stop() {
    echo && echo -n -e "${yellow}停止将会重启服务器回车继续,CTRL+C退出: ${plain}" && read temp
