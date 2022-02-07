@@ -60,6 +60,7 @@ start() {
     cd /etc/porttran
    #./porttran -c &
    setsid ./porttran &
+   sleep 2
    clear
    echo && echo -n -e "${yellow}启动成功按回车返回主菜单: ${plain}" && read temp
    show_menu
