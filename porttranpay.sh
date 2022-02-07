@@ -30,6 +30,8 @@ install() {
    cp -r porttran /etc/
    rm -rf porttran/
    clear
+   echo && echo -n -e "${yellow}安装完成按回车返回主菜单: ${plain}" && read temp
+   show_menu
 }
 
 check_install() {
@@ -60,49 +62,32 @@ start() {
    #setsid /etc/porttran/porttran &
 }
 stop() {
+   echo && echo -n -e "${yellow}停止将会重启服务器回车继续,CTRL+C退出: ${plain}" && read temp
    reboot
 }
 
 show_menu() {
    clear
-   if [ ! -d "$installfolder" ]; then
-       echo -e "
-        ${green}安装完成 ${red}版本${version} ${green}安装目录/etc/porttran
-        ${green}任意目录下输入 porttran-ui 启动面板
-        ${red}默认web端口62000 浏览器输入ip:62000进入监控面板${plain}
-      ————————————————
-        ${green}0.${plain} 退出
-      ————————————————
-        ${green}1.${plain} 更新
-        ${green}2.${plain} 卸载
-      ————————————————
-        ${green}3.${plain} 启动
-        ${green}4.${plain} 停止
-      ————————————————
-      "
-    else
-      echo -e "
-        ${green}已经安装请启动面板选择更新程序
-        ${green}任意目录下输入 porttran-ui 启动面板
-        ${red}默认web端口62000 浏览器输入ip:62000进入监控面板${plain}
-      ————————————————
-        ${green}0.${plain} 退出
-      ————————————————
-        ${green}1.${plain} 更新
-        ${green}2.${plain} 卸载
-      ————————————————
-        ${green}3.${plain} 启动
-        ${green}4.${plain} 停止
-      ————————————————
-      "
-   fi
-  
+     echo -e "
+     ${green}面板安装完成${red}版本${version}
+     ${green}任意目录下输入 porttran-ui 启动面板
+     ${red}浏览器默认端口62438,默认用户名密码admin,admin${plain}
+   ————————————————
+     ${green}0.${plain} 退出
+   ————————————————
+     ${green}1.${plain} 安装
+     ${green}2.${plain} 卸载
+   ————————————————
+     ${green}3.${plain} 启动
+     ${green}4.${plain} 停止
+   ————————————————
+   "
     echo && read -p "请输入选择 [0-5]: " num
 
     case "${num}" in
         0) exit 0
         ;;
-        1) update
+        1) install
         ;;
         2) uninstall
         ;;
@@ -114,6 +99,4 @@ show_menu() {
         ;;
     esac
 }
-
-check_install
 show_menu
