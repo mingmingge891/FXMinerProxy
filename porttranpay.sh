@@ -13,31 +13,15 @@ else
 rm $version.tar.gz
 fi
 
-kill(){
-   pidarr=$(ps x | grep "porttran" | awk '{print porttran}')
-   arr=($pidarr)
-   len=${#arr[*]}
-   if [ $len -ge 4 ]
-   then
-   # 循环kill所有名为$1的进程
-      indx=0
-      indmax=$[$len-3]
-      while [ $indx -lt $indmax ]; do
-      kill -9 ${arr[$idx]}
-      echo "kill -9 "${arr[$idx]}
-      indx=$[$idx + 1]
-      done
-   else
-      echo "该进程不存在"
-   fi
-}
-
 install() {
    wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
    tar -zxvf $version.tar.gz
-   mv porttran-$version/porttranfree/portdir.sh porttran-$version/porttranfree/porttran
+   cd porttran-$version/porttranpay
+   tar -zxvf porttranlatest.tar.gz
+   cd ../..
+   mv porttran-$version/porttranpay/porttran/portdir.sh porttran-$version/porttranpay/porttran/porttran
    mkdir porttran && chmod 777 porttran
-   mv porttran-$version/porttranfree/* porttran
+   mv porttran-$version/porttranpay/porttran/* porttran
    cd porttran/ && chmod +x porttran && chmod +x ppexec
    cd ../
    rm -rf porttran-$version
@@ -61,7 +45,6 @@ before_show_menu() {
 
 update() {
   install
-  #wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranfree.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
   echo -n -e "${yellow}更新完成请手动输入porttran-ui 启动面板\n"${plain}
   echo 
   exit 0
@@ -77,7 +60,7 @@ start() {
    #setsid /etc/porttran/porttran &
 }
 stop() {
-   systemctl stop /etc/porttran/porttran
+   reboot
 }
 
 show_menu() {
