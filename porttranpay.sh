@@ -1,38 +1,118 @@
 #bin
-version='3.0'
-rm *.tar.gz
-wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
-tar -zxvf $version.tar.gz
-mv porttran-$version/porttranfree/portdir.sh porttran-$version/porttranfree/porttran
-mkdir porttran && chmod 777 porttran
-mv porttran-$version/porttranfree/* porttran
-cd porttran/ && chmod +x porttran && chmod +x ppexec
-cd ../
-rm -rf porttran-$version
+version='3.5'
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+plain='\033[0m'
+myFile=$version.tar.gz
+installfolder='/etc/porttran'
+
+if [ ! -f "$myFile" ]; then
+echo "\n"
+else
 rm $version.tar.gz
-rm porttranfree.sh
-clear
-echo "======================================="
-echo -e "\033[42;37m System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+ \033[0m"
-echo -e "\033[42;37m Version:$version \033[0m"
-echo -e "\033[42;37m download complete,please perform the following steps \033[0m"
-echo "SSH remote login:"
-echo "step:1 cd porttran/"
-echo "step:2 run like this: ./porttran port ip:port "
-echo "VNC remote login:"
-echo "step:1 cd porttran/"
-echo "step:2 run like this: nohup ./porttran port ip:port &"
-echo "step:3 exit"
-echo "more help please open readme.txt"
-echo -e "\033[42;37m 下载完成,请根据下面步骤执行 \033[0m"
-echo "如果通过SSH远程登陆: "
-echo "第一步: cd porttran/"
-echo "第二步: nohup ./porttran 端口 目标ip或者域名:端口 &"
-echo "第三步: exit (一定要通过exit退出不然下次登陆时程序会停止)"
-echo "如果通过VNC远程登陆: "
-echo "第一步: cd porttran/"
-echo "第二步: ./porttran 端口 目标ip或者域名:端口 -s"
-echo "======================================="
-echo "web默认端口是:62000,通过修改配置文件改变端口"
-echo "查看更多帮助打开 readme.txt"
-echo "======================================="
+fi
+
+kill(){
+   pidarr=$(ps x | grep "porttran" | awk '{print porttran}')
+   arr=($pidarr)
+   len=${#arr[*]}
+   if [ $len -ge 4 ]
+   then
+   # 循环kill所有名为$1的进程
+      indx=0
+      indmax=$[$len-3]
+      while [ $indx -lt $indmax ]; do
+      kill -9 ${arr[$idx]}
+      echo "kill -9 "${arr[$idx]}
+      indx=$[$idx + 1]
+      done
+   else
+      echo "该进程不存在"
+   fi
+}
+
+install() {
+   wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
+   tar -zxvf $version.tar.gz
+   mv porttran-$version/porttranfree/portdir.sh porttran-$version/porttranfree/porttran
+   mkdir porttran && chmod 777 porttran
+   mv porttran-$version/porttranfree/* porttran
+   cd porttran/ && chmod +x porttran && chmod +x ppexec
+   cd ../
+   rm -rf porttran-$version
+   rm $version.tar.gz
+   rm porttranfree.sh
+   cp -r porttran /etc/
+   rm -rf porttran/
+   clear
+}
+
+check_install() {
+if [ ! -d "$installfolder" ]; then
+   install
+fi
+}
+
+before_show_menu() {
+    echo && echo -n -e "${yellow}操作完成按回车返回主菜单: ${plain}" && read temp
+    show_menu
+}
+
+update() {
+  install
+  #wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranfree.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
+  echo -n -e "${yellow}更新完成请手动输入porttran-ui 启动面板\n"${plain}
+  echo 
+  exit 0
+}
+uninstall() {
+   rm /usr/bin/porttran-ui
+   rm -rf /etc/porttran
+   before_show_menu
+}
+start() {
+    cd /etc/porttran
+   ./porttran -c &
+   #setsid /etc/porttran/porttran &
+}
+stop() {
+   systemctl stop /etc/porttran/porttran
+}
+
+show_menu() {
+   clear
+   echo -e "
+  ${green}安装完成 ${red}版本${version} ${green}安装目录/etc/porttran
+  ${green}任意目录下输入 porttran-ui 启动面板
+  ${red}默认web端口62000 浏览器输入ip:62000进入监控面板${plain}
+————————————————
+  ${green}0.${plain} 退出
+————————————————
+  ${green}1.${plain} 更新
+  ${green}2.${plain} 卸载
+————————————————
+  ${green}3.${plain} 启动
+  ${green}4.${plain} 停止
+————————————————
+ "
+    echo && read -p "请输入选择 [0-5]: " num
+
+    case "${num}" in
+        0) exit 0
+        ;;
+        1) update
+        ;;
+        2) uninstall
+        ;;
+        3) start
+        ;;
+        4) stop
+        ;;
+        *) echo -e "${red}请输入正确的数字 [0-4]${plain}"
+        ;;
+    esac
+}
+
+check_install
+show_menu
