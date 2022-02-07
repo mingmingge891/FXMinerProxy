@@ -66,22 +66,7 @@ stop() {
 show_menu() {
    clear
    if [ ! -d "$installfolder" ]; then
-   echo -e "
-        ${green}已经安全请启动面板选择更新程序
-        ${green}任意目录下输入 porttran-ui 启动面板
-        ${red}默认web端口62000 浏览器输入ip:62000进入监控面板${plain}
-      ————————————————
-        ${green}0.${plain} 退出
-      ————————————————
-        ${green}1.${plain} 更新
-        ${green}2.${plain} 卸载
-      ————————————————
-        ${green}3.${plain} 启动
-        ${green}4.${plain} 停止
-      ————————————————
- "
-   else
-      echo -e "
+       echo -e "
         ${green}安装完成 ${red}版本${version} ${green}安装目录/etc/porttran
         ${green}任意目录下输入 porttran-ui 启动面板
         ${red}默认web端口62000 浏览器输入ip:62000进入监控面板${plain}
@@ -94,7 +79,22 @@ show_menu() {
         ${green}3.${plain} 启动
         ${green}4.${plain} 停止
       ————————————————
- "
+      "
+    else
+      echo -e "
+        ${green}已经安装请启动面板选择更新程序
+        ${green}任意目录下输入 porttran-ui 启动面板
+        ${red}默认web端口62000 浏览器输入ip:62000进入监控面板${plain}
+      ————————————————
+        ${green}0.${plain} 退出
+      ————————————————
+        ${green}1.${plain} 更新
+        ${green}2.${plain} 卸载
+      ————————————————
+        ${green}3.${plain} 启动
+        ${green}4.${plain} 停止
+      ————————————————
+      "
    fi
   
     echo && read -p "请输入选择 [0-5]: " num
