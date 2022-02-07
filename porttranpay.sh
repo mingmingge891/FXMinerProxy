@@ -60,6 +60,9 @@ start() {
     cd /etc/porttran
    #./porttran -c &
    setsid ./porttran &
+   clear
+   echo && echo -n -e "${yellow}启动成功按回车返回主菜单: ${plain}" && read temp
+   show_menu
 }
 stop() {
    echo && echo -n -e "${yellow}停止将会重启服务器回车继续,CTRL+C退出: ${plain}" && read temp
