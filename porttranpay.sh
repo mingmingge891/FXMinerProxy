@@ -1,6 +1,6 @@
 #bin
 version='3.5.1.1'
-shell_version='2.0.4'
+shell_version='2.0.5'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -52,11 +52,9 @@ install() {
 
 check_install() {
 if [ ! -d "$installfolder" ]; then
-  echo -e "
-  ${green}转发没有安装"
+  echo -e "    ${green}转发没有安装"
   else
-  echo -e "
-  ${green}转发已经安装"
+  echo -e "    ${green}转发已经安装"
 fi
 }
 
