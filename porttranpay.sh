@@ -1,6 +1,6 @@
 #bin
 version='3.5.1.1'
-shell_version='2.0.6'
+shell_version='2.1.0'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -52,9 +52,9 @@ install() {
 
 check_install() {
 if [ ! -d "$installfolder" ]; then
-  echo -e "      ${green}转发没有安装"
+  echo -e "             ${red}<<转发没有安装>>"
   else
-  echo -e "      ${green}转发已经安装"
+  echo -e "             ${green}<<转发已经安装>>"
 fi
 }
 
@@ -64,7 +64,6 @@ before_show_menu() {
 }
 update_shell() {
   wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranpay.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
-  echo -n -e "${yellow}更新完成请手动输入porttran-ui 重启管理界面\n"${plain}
   echo 
   exit 0
 }
