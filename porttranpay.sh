@@ -52,9 +52,9 @@ install() {
 
 check_install() {
 if [ ! -d "$installfolder" ]; then
-  echo -e "    ${green}转发没有安装"
+  echo -e "     ${green}转发没有安装"
   else
-  echo -e "    ${green}转发已经安装"
+  echo -e "     ${green}转发已经安装"
 fi
 }
 
