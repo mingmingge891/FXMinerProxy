@@ -1,5 +1,6 @@
 #bin
 version='3.5.1'
+shell_version='2.0.1'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -13,40 +14,20 @@ else
 rm $version.tar.gz
 fi
 kill_porttran(){
-   pidarr=$(ps x | grep "porttran" | awk '{print porttran}')
-   arr=($pidarr)
-   len=${#arr[*]}
-   if [ $len -ge 4 ]
-   then
-   # 循环kill所有名为$1的进程
-      indx=0
-      indmax=$[$len-3]
-      while [ $indx -lt $indmax ]; do
-      kill -9 ${arr[$idx]}
-      echo "kill -9 "${arr[$idx]}
-      indx=$[$idx + 1]
+      PROCESS=`ps -ef|grep porttran|grep -v grep|grep -v PPID|awk '{ print $2}'`
+      for i in $PROCESS
+      do
+        echo "Kill the $1 process [ $i ]"
+        kill -9 $i
       done
-   else
-      echo "该进程不存在"
-   fi
 }
 kill_ppexec(){
-   pidarr=$(ps x | grep "ppexec" | awk '{print ppexec}')
-   arr=($pidarr)
-   len=${#arr[*]}
-   if [ $len -ge 4 ]
-   then
-   # 循环kill所有名为$1的进程
-      indx=0
-      indmax=$[$len-3]
-      while [ $indx -lt $indmax ]; do
-      kill -9 ${arr[$idx]}
-      echo "kill -9 "${arr[$idx]}
-      indx=$[$idx + 1]
+      PROCESS=`ps -ef|grep ppexec|grep -v grep|grep -v PPID|awk '{ print $2}'`
+      for i in $PROCESS
+      do
+        echo "Kill the $1 process [ $i ]"
+        kill -9 $i
       done
-   else
-      echo "该进程不存在"
-   fi
 }
 install() {
    wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
@@ -106,7 +87,7 @@ stop() {
 show_menu() {
    clear
      echo -e "
-     ${green}porttran管理界面安装完成${red}版本${version}
+     ${green}porttran管理界面安装完成${red}版本${shell_version}
      ${green}任意目录下输入porttran-ui 启动管理界面
      ${red}转发软件浏览器默认端口62438,默认用户名密码admin,admin${plain}
    ————————————————
