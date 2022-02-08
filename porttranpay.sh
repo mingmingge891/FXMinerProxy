@@ -1,6 +1,6 @@
 #bin
 version='3.5.1'
-shell_version='2.0.1'
+shell_version='2.0.2'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -110,7 +110,7 @@ show_menu() {
         ;;
         2) uninstall
         ;;
-        4) update
+        3) update
         ;;
         4) start
         ;;
