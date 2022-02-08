@@ -1,6 +1,6 @@
 #bin
 version='3.5.1.1'
-shell_version='2.0.3'
+shell_version='2.0.4'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -13,6 +13,7 @@ echo "\n"
 else
 rm $version.tar.gz
 fi
+
 kill_porttran(){
       PROCESS=`ps -ef|grep porttran|grep -v grep|grep -v PPID|awk '{ print $2}'`
       for i in $PROCESS
@@ -51,25 +52,39 @@ install() {
 
 check_install() {
 if [ ! -d "$installfolder" ]; then
-   install
+  echo -e "${green}转发没有安装"
+  else
+  echo -e "${green}转发已经安装"
 fi
 }
+
 before_show_menu() {
     echo && echo -n -e "${yellow}操作完成按回车返回主菜单: ${plain}" && read temp
     show_menu
 }
-update() {
+update_shell() {
   wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranpay.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
   echo -n -e "${yellow}更新完成请手动输入porttran-ui 重启管理界面\n"${plain}
   echo 
   exit 0
 }
-uninstall() {
-   echo && echo -n -e "${yellow}确定卸载吗,按回车确定,CTRL+C退出: ${plain}" && read temp
-   rm /usr/bin/porttran-ui
-   rm -rf /etc/porttran
+update_app() {
    kill_porttran
    kill_ppexec
+   rm /usr/bin/porttran-ui
+   install
+   before_show_menu
+}
+uninstall_app() {
+   echo && echo -n -e "${yellow}确定卸载吗,按回车确定,CTRL+C退出: ${plain}" && read temp
+   kill_porttran
+   kill_ppexec
+   rm -rf /etc/porttran
+   before_show_menu
+}
+uninstall_shell() {
+   echo && echo -n -e "${yellow}确定卸载吗,按回车确定,CTRL+C退出: ${plain}" && read temp
+   rm /usr/bin/porttran-ui
    before_show_menu
 }
 start() {
@@ -86,37 +101,45 @@ stop() {
 }
 show_menu() {
    clear
+     check_install
      echo -e "
-     ${green}porttran管理界面安装完成${red}版本${shell_version},转发软件版本${version}
+     ${green}porttran脚本管理界面安装完成${red}版本${shell_version},转发软件版本${version}
      ${green}任意目录下输入porttran-ui 启动管理界面
      ${red}转发软件浏览器默认端口62438,默认用户名密码admin,admin${plain}
    ————————————————
      ${green}0.${plain} 退出
    ————————————————
      ${green}1.${plain} 安装转发
-     ${green}2.${plain} 卸载转发
-     ${green}3.${plain} 更新脚本
+     ${green}2.${plain} 更新转发
+     ${green}3.${plain} 卸载转发
    ————————————————
-     ${green}4.${plain} 启动转发
-     ${green}5.${plain} 停止转发
+     ${green}4.${plain} 更新脚本
+     ${green}5.${plain} 卸载脚本
+   ————————————————
+     ${green}6.${plain} 启动转发
+     ${green}7.${plain} 停止转发
    ————————————————
    "
-    echo && read -p "请输入选择 [0-5]: " num
+    echo && read -p "请输入选择 [0-7]: " num
 
     case "${num}" in
         0) exit 0
         ;;
         1) install
         ;;
-        2) uninstall
+        2) update_app
         ;;
-        3) update
+        3) uninstall_app
         ;;
-        4) start
+        4) update_shell
         ;;
-        5) stop
+        5) uninstall_shell
         ;;
-        *) echo -e "${red}请输入正确的数字 [0-4]${plain}"
+        6) start
+        ;;
+        7) stop
+        ;;
+        *) echo -e "${red}请输入正确的数字 [0-7]${plain}"
         ;;
     esac
 }
