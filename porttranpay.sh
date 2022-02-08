@@ -1,6 +1,6 @@
 #bin
 version='3.5.1.1'
-shell_version='2.1.0'
+shell_version='2.1.1'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -70,8 +70,28 @@ update_shell() {
 update_app() {
    kill_porttran
    kill_ppexec
-   rm /usr/bin/porttran-ui
-   install
+   wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
+   tar -zxvf $version.tar.gz
+   cd porttran-$version/porttranpay
+   tar -zxvf porttranlatest.tar.gz
+   cd ../..
+   mv porttran-$version/porttranpay/porttran/portdir.sh porttran-$version/porttranpay/porttran/porttran
+   mkdir porttran && chmod 777 porttran
+   mv porttran-$version/porttranpay/porttran/* porttran
+   cd porttran/ && chmod +x porttran && chmod +x ppexec
+   cd ../
+   rm -rf porttran-$version
+   rm $version.tar.gz
+   rm porttranfree.sh
+   rm /etc/porttran/porttran
+   rm /etc/porttran/ppexec
+   rm -rf /etc/porttran/ui
+   cp porttran/ppexec /etc/porttran/
+   cp porttran/porttran /etc/porttran/
+   cd porttran/
+   cp -r ui /etc/porttran
+   cd ../
+   rm -rf porttran/
    before_show_menu
 }
 uninstall_app() {
