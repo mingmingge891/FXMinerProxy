@@ -1,6 +1,6 @@
 #bin
 version='3.5.1.1'
-shell_version='2.0.2'
+shell_version='2.0.3'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -87,7 +87,7 @@ stop() {
 show_menu() {
    clear
      echo -e "
-     ${green}porttran管理界面安装完成${red}版本${shell_version}
+     ${green}porttran管理界面安装完成${red}版本${shell_version},转发软件版本${version}
      ${green}任意目录下输入porttran-ui 启动管理界面
      ${red}转发软件浏览器默认端口62438,默认用户名密码admin,admin${plain}
    ————————————————
