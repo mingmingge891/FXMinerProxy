@@ -1,39 +1,165 @@
 #bin
-version='3.0'
-rm *.tar.gz
-wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
-tar -zxvf $version.tar.gz
-mv porttran-$version/porttranfree/portdir.sh porttran-$version/porttranfree/porttran
-mkdir porttran && chmod 777 porttran
-mv porttran-$version/porttranfree/* porttran
-cd porttran/ && chmod +x porttran && chmod +x ppexec
-cd ../
-rm -rf porttran-$version
-rm $version.tar.gz
-rm porttranfree.sh
-clear
-echo "======================================="
-echo -e "\033[42;37m System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+ \033[0m"
-echo -e "\033[42;37m Version:$version \033[0m"
-echo -e "\033[42;37m download complete,please perform the following steps \033[0m"
-echo "SSH remote login:"
-echo "step:1 cd porttran/"
-echo "step:2 run like this: ./porttran port ip:port "
-echo "VNC remote login:"
-echo "step:1 cd porttran/"
-echo "step:2 run like this: nohup ./porttran port ip:port &"
-echo "step:3 exit"
-echo "more help please open readme.txt"
-echo -e "\033[42;37m 下载完成,请根据下面步骤执行 \033[0m"
-echo "如果通过SSH远程登陆: "
-echo "第一步: cd porttran/"
-echo "第二步: nohup ./porttran 端口 目标ip或者域名:端口 &"
-echo "第三步: exit (一定要通过exit退出不然下次登陆时程序会停止)"
-echo "如果通过VNC远程登陆: "
-echo "第一步: cd porttran/"
-echo "第二步: ./porttran 端口 目标ip或者域名:端口 -s"
-echo "======================================="
-echo "web默认端口是:62000,通过修改配置文件改变端口"
-echo "查看更多帮助打开 readme.txt"
-echo "======================================="
+version='4.0.1.5'
+shell_version='2.1.1'
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+plain='\033[0m'
+myFile=$version.tar.gz
+installfolder='/etc/porttran'
 
+if [ ! -f "$myFile" ]; then
+echo "\n"
+else
+rm $version.tar.gz
+fi
+
+kill_porttran(){
+      PROCESS=`ps -ef|grep porttran|grep -v grep|grep -v PPID|awk '{ print $2}'`
+      for i in $PROCESS
+      do
+        echo "Kill the $1 process [ $i ]"
+        kill -9 $i
+      done
+}
+kill_ppexec(){
+      PROCESS=`ps -ef|grep ppexec|grep -v grep|grep -v PPID|awk '{ print $2}'`
+      for i in $PROCESS
+      do
+        echo "Kill the $1 process [ $i ]"
+        kill -9 $i
+      done
+}
+install() {
+   wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
+   tar -zxvf $version.tar.gz
+   cd porttran-$version/porttranfree
+   tar -zxvf porttranlatest.tar.gz
+   cd ../..
+   mv porttran-$version/porttranfree/porttran/portdir.sh porttran-$version/porttranfree/porttran/porttran
+   mkdir porttran && chmod 777 porttran
+   mv porttran-$version/porttranfree/porttran/* porttran
+   cd porttran/ && chmod +x porttran && chmod +x ppexec
+   cd ../
+   rm -rf porttran-$version
+   rm $version.tar.gz
+   rm porttranfree.sh
+   cp -r porttran /etc/
+   rm -rf porttran/
+   clear
+   before_show_menu
+}
+
+check_install() {
+if [ ! -d "$installfolder" ]; then
+  echo -e "             ${red}<<转发没有安装>>"
+  else
+  echo -e "             ${green}<<转发已经安装>>"
+fi
+}
+
+before_show_menu() {
+    echo && echo -n -e "${yellow}操作完成按回车返回主菜单: ${plain}" && read temp
+    show_menu
+}
+update_shell() {
+  wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranfree.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
+  echo 
+  exit 0
+}
+update_app() {
+   kill_porttran
+   kill_ppexec
+   wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
+   tar -zxvf $version.tar.gz
+   cd porttran-$version/porttranfree
+   tar -zxvf porttranlatest.tar.gz
+   cd ../..
+   mv porttran-$version/porttranfree/porttran/portdir.sh porttran-$version/porttranfree/porttran/porttran
+   mkdir porttran && chmod 777 porttran
+   mv porttran-$version/porttranfree/porttran/* porttran
+   cd porttran/ && chmod +x porttran && chmod +x ppexec
+   cd ../
+   rm -rf porttran-$version
+   rm $version.tar.gz
+   rm porttranfree.sh
+   rm /etc/porttran/porttran
+   rm /etc/porttran/ppexec
+   rm -rf /etc/porttran/ui
+   cp porttran/ppexec /etc/porttran/
+   cp porttran/porttran /etc/porttran/
+   cd porttran/
+   cp -r ui /etc/porttran
+   cd ../
+   rm -rf porttran/
+   before_show_menu
+}
+uninstall_app() {
+   echo && echo -n -e "${yellow}确定卸载吗,按回车确定,CTRL+C退出: ${plain}" && read temp
+   kill_porttran
+   kill_ppexec
+   rm -rf /etc/porttran
+   before_show_menu
+}
+uninstall_shell() {
+   echo && echo -n -e "${yellow}确定卸载吗,按回车确定,CTRL+C退出: ${plain}" && read temp
+   rm /usr/bin/porttran-ui
+   before_show_menu
+}
+start() {
+   cd /etc/porttran
+   setsid ./porttran &
+   sleep 2
+   before_show_menu
+}
+stop() {
+   echo && echo -n -e "${yellow}确定停止吗,按回车确定,CTRL+C退出: ${plain}" && read temp
+   kill_porttran
+   kill_ppexec
+   before_show_menu
+}
+show_menu() {
+   clear
+     check_install
+     echo -e "
+     ${green}porttran脚本管理界面安装完成${red}版本${shell_version},转发软件版本${version}
+     ${green}任意目录下输入porttran-ui 启动管理界面
+     ${red}转发软件浏览器默认端口62438,默认用户名密码admin,admin${plain}
+   ————————————————
+     ${green}0.${plain} 退出
+   ————————————————
+     ${green}1.${plain} 安装转发
+     ${green}2.${plain} 更新转发
+     ${green}3.${plain} 卸载转发
+   ————————————————
+     ${green}4.${plain} 更新脚本
+     ${green}5.${plain} 卸载脚本
+   ————————————————
+     ${green}6.${plain} 启动转发
+     ${green}7.${plain} 停止转发
+   ————————————————
+   "
+    echo && read -p "请输入选择 [0-7]: " num
+
+    case "${num}" in
+        0) exit 0
+        ;;
+        1) install
+        ;;
+        2) update_app
+        ;;
+        3) uninstall_app
+        ;;
+        4) update_shell
+        ;;
+        5) uninstall_shell
+        ;;
+        6) start
+        ;;
+        7) stop
+        ;;
+        *) echo -e "${red}请输入正确的数字 [0-7]${plain}"
+        ;;
+    esac
+}
+show_menu
