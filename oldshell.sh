@@ -31,7 +31,7 @@ kill_ppexec(){
       done
 }
 install() {
-   wget http://download.transitpool.org/porttraninstall/$version.tar.gz
+   wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
    tar -zxvf $version.tar.gz
    cd porttran-$version/porttranpay
    tar -zxvf porttranlatest.tar.gz
@@ -63,14 +63,14 @@ before_show_menu() {
     show_menu
 }
 update_shell() {
-  wget http://download.transitpool.org/porttraninstall/porttraninstall.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
+  wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranpay.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
   echo 
   exit 0
 }
 update_app() {
    kill_porttran
    kill_ppexec
-   wget http://download.transitpool.org/porttraninstall/$version.tar.gz
+   wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
    tar -zxvf $version.tar.gz
    cd porttran-$version/porttranpay
    tar -zxvf porttranlatest.tar.gz
