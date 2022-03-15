@@ -1,19 +1,19 @@
 # porttran
-  # ethermine以太坊等流量中转工具,eth端口转发，tcp端口转发，收费版本支持抽水功能，web后台界面管理
+  # ethermine以太坊等流量中转工具,eth端口转发，tcp端口转发，企业版本支持抽水功能
   
   # 官网:www.fxpool.org
   
- # 免费版本功能
+ # 个人版功能
   
-  1.支持多ip转发通过修改loadconfig.json配置文件实现
+  1.支持多ip转发
   
   2.状态显示显示当前tcp连接数cpu使用率等
   
-  3.免费版本只能进行tcp转发任务,适用于个人用户,适合任何TCP端口转发不只是ETH
+  3.web管理
   
- # 收费版本功能
+ # 企业版功能
   
-  1.支持多ip转发通过修改loadconfig.json配置文件实现
+  1.支持多ip转发
   
   2.状态显示显示当前tcp连接数cpu使用率等
   
