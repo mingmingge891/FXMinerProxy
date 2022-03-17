@@ -1,5 +1,5 @@
 #bin
-version='5.0.1.7'
+version='5.0.1.8'
 shell_version='2.1.1'
 red='\033[0;31m'
 green='\033[0;32m'
