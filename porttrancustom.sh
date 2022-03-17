@@ -63,7 +63,7 @@ before_show_menu() {
     show_menu
 }
 update_shell() {
-  wget http://download.transitpool.org/custom/porttraninstall.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
+  wget http://download.transitpool.org/custom/porttrancustom.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
   echo 
   exit 0
 }
