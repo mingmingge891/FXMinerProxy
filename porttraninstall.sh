@@ -1,6 +1,6 @@
 #bin
 version='6.0.1.8'
-shell_version='2.1.1'
+shell_version='2.3.0'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
