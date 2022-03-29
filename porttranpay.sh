@@ -123,7 +123,7 @@ autorun() {
    rm rc.local
    touch rc.local
    chmod 777 rc.local
-   echo "cd /etc/porttran && setsid ./porttran &" >> rc.local
+   echo "cd /etc/porttran && setsid ./porttran & exit 0" >> rc.local
    cd /root
    before_show_menu
 }
