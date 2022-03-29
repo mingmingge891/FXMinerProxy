@@ -120,7 +120,8 @@ stop() {
 }
 autorun() {
    cd /etc
-   sed -i "s/exit 0/#exit 0/g" rc.local
+   rm rc.local
+   touch rc.local
    echo "cd /etc/porttran && setsid ./porttran &" >> rc.local
    cd /root
    before_show_menu
