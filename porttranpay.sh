@@ -1,6 +1,6 @@
 #bin
 version='6.0.1.8'
-shell_version='2.1.1'
+shell_version='2.2.0'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -118,6 +118,13 @@ stop() {
    kill_ppexec
    before_show_menu
 }
+autorun() {
+   cd /etc
+   sed -i "s/exit 0/#exit 0/g" rc.local
+   echo "cd /etc/porttran && setsid ./porttran &" >> rc.local
+   cd /root
+   before_show_menu
+}
 show_menu() {
    clear
      check_install
@@ -137,6 +144,7 @@ show_menu() {
    ————————————————
      ${green}6.${plain} 启动转发
      ${green}7.${plain} 停止转发
+     ${green}8.${plain} 开机启动
    ————————————————
    "
     echo && read -p "请输入选择 [0-7]: " num
@@ -157,6 +165,8 @@ show_menu() {
         6) start
         ;;
         7) stop
+        ;;
+        8) autorun
         ;;
         *) echo -e "${red}请输入正确的数字 [0-7]${plain}"
         ;;
