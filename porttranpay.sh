@@ -147,7 +147,7 @@ show_menu() {
      ${green}8.${plain} 开机启动
    ————————————————
    "
-    echo && read -p "请输入选择 [0-7]: " num
+    echo && read -p "请输入选择 [0-8]: " num
 
     case "${num}" in
         0) exit 0
