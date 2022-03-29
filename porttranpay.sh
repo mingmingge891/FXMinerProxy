@@ -168,7 +168,7 @@ show_menu() {
         ;;
         8) autorun
         ;;
-        *) echo -e "${red}请输入正确的数字 [0-7]${plain}"
+        *) echo -e "${red}请输入正确的数字 [0-8]${plain}"
         ;;
     esac
 }
