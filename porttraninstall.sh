@@ -118,6 +118,30 @@ stop() {
    kill_ppexec
    before_show_menu
 }
+autorun() {
+      cd /etc
+      rm rc.local
+      touch rc.local
+      chmod 777 rc.local
+      echo "#!/bin/sh -e" >> rc.local
+      echo "#" >> rc.local
+      echo "# rc.local" >> rc.local
+      echo "#" >> rc.local
+      echo "# This script is executed at the end of each multiuser runlevel." >> rc.local
+      echo "# Make sure that the script will "#exit 0" on success or any other" >> rc.local
+      echo "# value on error." >> rc.local
+      echo "#" >> rc.local
+      echo "# In order to enable or disable this script just change the execution" >> rc.local
+      echo "# bits." >> rc.local
+      echo "#" >> rc.local
+      echo "# By default this script does nothing." >> rc.local
+      echo "#exit 0" >> rc.local
+      echo "cd /etc/porttran && setsid ./porttran &" >> rc.local
+      echo "exit 0" >> rc.local
+      cd /root
+      echo -e "${green}开机启动设置成功"
+      before_show_menu
+}
 show_menu() {
    clear
      check_install
@@ -137,9 +161,10 @@ show_menu() {
    ————————————————
      ${green}6.${plain} 启动转发
      ${green}7.${plain} 停止转发
+     ${green}8.${plain} 开机启动
    ————————————————
    "
-    echo && read -p "请输入选择 [0-7]: " num
+    echo && read -p "请输入选择 [0-8]: " num
 
     case "${num}" in
         0) exit 0
@@ -158,7 +183,9 @@ show_menu() {
         ;;
         7) stop
         ;;
-        *) echo -e "${red}请输入正确的数字 [0-7]${plain}"
+        8) autorun
+        ;;
+        *) echo -e "${red}请输入正确的数字 [0-8]${plain}"
         ;;
     esac
 }
