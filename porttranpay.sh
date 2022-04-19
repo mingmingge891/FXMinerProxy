@@ -123,7 +123,7 @@ autorun() {
       rm rc.local
       touch rc.local
       chmod 777 rc.local
-      echo "#!/bin/sh -e" >> rc.local
+      echo "#!/bin/bash" >> rc.local
       echo "#" >> rc.local
       echo "# rc.local" >> rc.local
       echo "#" >> rc.local
