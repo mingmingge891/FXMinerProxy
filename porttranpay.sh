@@ -148,6 +148,8 @@ show_menu() {
      echo -e "
      ${green}porttran脚本管理界面安装完成${red}版本${shell_version},转发软件版本${version}
      ${green}任意目录下输入porttran-ui 启动管理界面
+     ${green}更新流程 4,7,2,6
+     ${green}若启动错误请 7,6 重启
      ${red}转发软件浏览器默认端口62438,默认用户名密码admin,admin${plain}
    ————————————————
      ${green}0.${plain} 退出
