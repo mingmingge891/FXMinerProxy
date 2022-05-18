@@ -1,5 +1,5 @@
 #bin
-version='7.0.1.3.1'
+version='7.0.1.3.2'
 shell_version='2.3.0'
 red='\033[0;31m'
 green='\033[0;32m'
@@ -68,6 +68,7 @@ update_shell() {
   exit 0
 }
 update_app() {
+   echo && echo -n -e "${yellow}确定更新吗,按回车确定,CTRL+C退出: ${plain}" && read temp
    kill_porttran
    kill_ppexec
    wget https://github.com/mingmingge891/porttran/archive/refs/tags/$version.tar.gz
