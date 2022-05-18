@@ -1,6 +1,6 @@
 #bin
 version='7.0.1.3.2'
-shell_version='2.3.0'
+shell_version='2.3.1'
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -148,26 +148,22 @@ show_menu() {
      check_install
      echo -e "
      ${green}porttran脚本管理界面安装完成${red}版本${shell_version},转发软件版本${version}
-     ${green}任意目录下输入porttran-ui 启动管理界面
-     ${green}更新流程 4,7,2,6
-     ${green}若启动错误请 7,6 重启
+     ${green}更新流程 4,6
+     ${green}若启动错误请 5,4 步骤重启
      ${red}转发软件浏览器默认端口62438,默认用户名密码admin,admin${plain}
    ————————————————
      ${green}0.${plain} 退出
    ————————————————
-     ${green}1.${plain} 安装转发
-     ${green}2.${plain} 更新转发
-     ${green}3.${plain} 卸载转发
+     ${green}1.${plain} 安装
+     ${green}2.${plain} 更新
+     ${green}3.${plain} 卸载
    ————————————————
-     ${green}4.${plain} 更新脚本
-     ${green}5.${plain} 卸载脚本
-   ————————————————
-     ${green}6.${plain} 启动转发
-     ${green}7.${plain} 停止转发
-     ${green}8.${plain} 开机启动
+     ${green}4.${plain} 启动
+     ${green}5.${plain} 停止
+     ${green}6.${plain} 开机自启
    ————————————————
    "
-    echo && read -p "请输入选择 [0-8]: " num
+    echo && read -p "请输入选择 [0-6]: " num
 
     case "${num}" in
         0) exit 0
@@ -178,17 +174,13 @@ show_menu() {
         ;;
         3) uninstall_app
         ;;
-        4) update_shell
+        4) start
         ;;
-        5) uninstall_shell
+        5) stop
         ;;
-        6) start
+        6) autorun
         ;;
-        7) stop
-        ;;
-        8) autorun
-        ;;
-        *) echo -e "${red}请输入正确的数字 [0-8]${plain}"
+        *) echo -e "${red}请输入正确的数字 [0-6]${plain}"
         ;;
     esac
 }
