@@ -30,4 +30,4 @@
 # linux
   bash <(curl -s -L https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranpay.sh)
 # windows
-  
+  https://raw.githubusercontent.com/mingmingge891/porttran/main/windows/porttranwindows.zip
