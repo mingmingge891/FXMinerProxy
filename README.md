@@ -27,5 +27,5 @@
 #  个人版本版本
   wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranfree.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
 # 企业版
-  wget https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranpay.sh -O -> /usr/bin/porttran-ui && chmod +x /usr/bin/porttran-ui && porttran-ui
+  bash <(curl -s -L https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranpay.sh)
   
