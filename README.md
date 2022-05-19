@@ -1,4 +1,4 @@
-# fxproxyminer
+# FXMinerProxy
   # 官网:www.fxpool.org
   
 # 软件功能
