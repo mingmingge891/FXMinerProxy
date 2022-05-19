@@ -28,6 +28,6 @@
 # 一键安装
 
 # linux
-  bash <(curl -s -L https://raw.githubusercontent.com/mingmingge891/porttran/main/porttranpay.sh)
+  bash <(curl -s -L https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/porttranpay.sh)
 # windows
-  https://raw.githubusercontent.com/mingmingge891/porttran/main/windows/porttranwindows.zip
+  https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/windows/porttranwindows.zip
