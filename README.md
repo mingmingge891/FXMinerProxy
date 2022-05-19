@@ -1,8 +1,4 @@
 # fxproxyminer
-  # 原创高性能pow代理抽水软件
-  # 多币种支持
-  # 混淆加密客户端
-  # windows linux 同时支持
   # 官网:www.fxpool.org
   
 # 软件功能
@@ -28,8 +24,6 @@
 ![](http://47.105.86.47/image/fxproxyminer/home.jpg)
 矿工
 ![](http://47.105.86.47/image/fxproxyminer/miner.jpg)
-混淆
-![](http://47.105.86.47/image/fxproxyminer/aes.jpg)
 
 # 一键安装
 
