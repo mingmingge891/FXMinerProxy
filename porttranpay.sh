@@ -1,8 +1,8 @@
 #bin
 version='7.0.1.3.2'
 shell_version='2.3.1'
-uiname='porttran-ui'
-pkgname='porttran'
+uiname='FXMinerProxy-shell'
+pkgname='FXMinerProxy'
 authorname='mingmingge891'
 installname='porttranpay.sh'
 webuiname='ui'
