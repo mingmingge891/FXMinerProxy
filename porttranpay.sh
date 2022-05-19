@@ -1,6 +1,6 @@
 #bin
 version='7.0.1.3.2'
-shell_version='2.3.1'
+shell_version='2.3.2'
 uiname='FXMinerProxy-shell'
 pkgname='FXMinerProxy'
 authorname='mingmingge891'
