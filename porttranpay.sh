@@ -250,7 +250,6 @@ update_app() {
        rm -rf /etc/porttran/$sofname
        rm -rf /etc/porttran/ppexec
        rm -rf /etc/porttran/$webuiname
-       rm -rf /etc/porttran/redxx_latest_amd64_x86
        cp porttran/ppexec /etc/porttran/
        cp porttran/$sofname /etc/porttran/
        cd porttran/
