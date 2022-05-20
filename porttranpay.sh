@@ -254,6 +254,10 @@ update_app() {
        cp porttran/$sofname /etc/porttran/
        cd porttran/
        cp -r $webuiname /etc/porttran
+       #不存在则复制过去
+       if [ ! -d "/etc/porttran/redxx_latest_amd64_x86" ]; then
+          cp -r redxx_latest_amd64_x86 /etc/porttran
+       fi
        cd ../
        rm -rf porttran
        if [ ! -f "$installfolder" ]; then
