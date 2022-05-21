@@ -222,9 +222,9 @@ update_app() {
         fi
    fi
    echo && echo -n -e "${yellow}确定更新吗,按回车确定,CTRL+C退出: ${plain}" && read temp
+   wget https://github.com/$authorname/$pkgname/archive/refs/tags/$version.tar.gz
    kill_porttran
    kill_ppexec
-   wget https://github.com/$authorname/$pkgname/archive/refs/tags/$version.tar.gz
    tar -zxvf $version.tar.gz
    cd $pkgname-$version/porttranpay
    tar -zxvf porttranlatest.tar.gz
