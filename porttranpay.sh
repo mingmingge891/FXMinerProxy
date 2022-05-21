@@ -237,6 +237,9 @@ update_app() {
        show_menu
    else
        mv $pkgname-$version/porttranpay/porttran/portdir.sh $pkgname-$version/porttranpay/porttran/$sofname
+       rm $pkgname-$version/porttranpay/porttran/server.pem
+       rm $pkgname-$version/porttranpay/porttran/server.crt
+       rm $pkgname-$version/porttranpay/porttran/server.key
        #判断porttran重命名是否成功
        if [ ! -f "$pkgname-$version/porttranpay/porttran/$sofname" ]; then
          echo && echo -n -e "${yellow}更新失败,重命名失败,请重新操作,按回车返回主菜单: ${plain}" && read temp
