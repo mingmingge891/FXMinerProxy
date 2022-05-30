@@ -22,7 +22,7 @@
 # 软件截图
 主页
 ![](http://47.105.86.47/image/fxproxyminer/home.jpg)
-矿工
+矿池
 ![](http://47.105.86.47/image/fxproxyminer/miner.jpg)
 
 # 一键安装
