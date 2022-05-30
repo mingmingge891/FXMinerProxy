@@ -21,9 +21,9 @@
   8.超低开发者费0.27%
 # 软件截图
 主页
-![](http://47.105.86.47/image/fxproxyminer/home.jpg)
+![](http://47.105.86.47/image/fxproxyminer/home1.jpg)
 矿池
-![](http://47.105.86.47/image/fxproxyminer/miner.jpg)
+![](http://47.105.86.47/image/fxproxyminer/miner1.jpg)
 
 # 一键安装
 
