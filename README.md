@@ -8,6 +8,8 @@
   
   内置独家开发的加密混淆客户端 一键配置自动生成执行程序win和os都支持
   
+  API 开放 UI源码开放
+  
   windows服务器下载后运行run.exe（可保证程序永不死机）
   ![](http://47.105.86.47/image/fxproxyminer/home1.jpg)
 # 项目介绍
