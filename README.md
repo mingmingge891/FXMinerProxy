@@ -84,7 +84,10 @@
 
 # linux
   root目录执行
+  
   bash <(curl -s -L https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/porttranpay.sh)
+  
   如果没有curl命令请输入 apt-get install curl 安装
+  
 # windows
   https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/windows/porttranwindows.zip
