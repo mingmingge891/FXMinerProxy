@@ -1,7 +1,17 @@
 # FXMinerProxy
-  # 官网:www.fxpool.org
+
+  ssl免费证书下载地址自行下载后上传，1年的期限，不内置证书主要拍证书时间到期
   
-# 软件功能
+  官方网站可查看使用教程以及定制软件和联系客户http://www.fxpool.org
+  
+  开发者费用恒定0.27%！无论你设置多少都是0.27%开发费(单个端口最大20%)
+  
+  内置独家开发的加密混淆客户端 一键配置自动生成执行程序win和os都支持
+  
+  windows服务器下载后运行run.exe（可保证程序永不死机）
+  ![](http://47.105.86.47/image/fxproxyminer/home1.jpg)
+# 项目介绍
+  
   1.vue前端框架go百万并发高性能语言开发
   
   2.支持ETC,ETH,BTC,LTC,RVN,BEAM,ERG,CFX等多币抽水
@@ -18,12 +28,9 @@
   
   8.延迟快速响应支持，让用户的显示的延迟是你当前代理服务器的延迟，国内实测10ms
   
-  8.超低开发者费0.27%
-# 软件截图
-主页
-![](http://47.105.86.47/image/fxproxyminer/home1.jpg)
-矿池
-![](http://47.105.86.47/image/fxproxyminer/miner1.jpg)
+  9.时时查看抽水转换率
+  
+# 更新日志
 
 # 一键安装
 
