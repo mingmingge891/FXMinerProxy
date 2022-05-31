@@ -93,3 +93,5 @@
   
 # windows
   https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/windows/porttranwindows.zip
+  
+  下载解压后执行run.exe 可打开守护进程
