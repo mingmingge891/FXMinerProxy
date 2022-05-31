@@ -1,6 +1,6 @@
 #bin
 version='7.0.1.4.2'
-shell_version='2.3.2'
+shell_version='2.4'
 uiname='FXMinerProxy-shell'
 pkgname='FXMinerProxy'
 authorname='mingmingge891'
@@ -295,6 +295,7 @@ start() {
        else
           echo -e "${green}启动中..."
           cd /etc/porttran
+          sed -i 's/"is_open_general_swap": true/"is_open_general_swap": false/g' localconfig.json
           setsid ./$sofname &
           sleep 3
        fi
