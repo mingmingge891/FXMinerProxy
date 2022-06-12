@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/Release-7.0.1.4.3_ETHASH-orgin.svg" alt="travis">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/Last_Update-2022_05_30-orgin.svg" alt="travis">
+    <img src="https://img.shields.io/badge/Last_Update-2022_06_02-orgin.svg" alt="travis">
   </a>
   <a>
     <img src="https://img.shields.io/badge/Language-GoLang-green.svg" alt="travis">
@@ -50,6 +50,11 @@
 * 固定0.27%  
 ## :scroll: 更新日志
 ```bigquery
+2022-06-02 16:38     7.0.1.4.3>>主页添加运行时常
+                     1.CPU内存等统计改为1分钟
+                     2.修改RPC 参数为0个时报错的BUG
+                     3.离线数据不用线程
+
 2022-05-30 17:48     7.0.1.4.2>>UI界面大修改体验拉满
                      1.修改轻松旷工钱包地址错误导致停止挖矿的BUG
                      2.离线时间增加到30分钟
