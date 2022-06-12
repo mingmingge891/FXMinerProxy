@@ -5,7 +5,7 @@
 <h4 align="center">免费SSL证书(http://www.fxpool.org).</h4>
 <p align="center">
   <a>
-    <img src="https://img.shields.io/badge/Release-7.0.1.4.3_ETHASH-orgin.svg" alt="travis">
+    <img src="https://img.shields.io/badge/Release-7.0.1.4.3-orgin.svg" alt="travis">
   </a>
   <a>
     <img src="https://img.shields.io/badge/Last_Update-2022_06_02-orgin.svg" alt="travis">
