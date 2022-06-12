@@ -1,5 +1,6 @@
 # FXMinerProxy
 <h4 align="center">基于Golang高性能Pow挖矿代理中转服务器软件.</h4>
+<h4 align="center">支持ETH/ETC/BTC/LTC/RVN/CFX/TON/BEAM/ERG/BTG.</h4>
 <h4 align="center">官网(http://www.fxpool.org).</h4>
 <h4 align="center">免费SSL证书(http://www.fxpool.org).</h4>
 <p align="center">
