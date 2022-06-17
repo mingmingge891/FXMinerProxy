@@ -1,1 +1,2 @@
-1
+must run run.exe
+必须运行 run.exe
