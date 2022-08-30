@@ -23,9 +23,9 @@
 
   ![](http://47.105.86.47/image/fxproxyminer/home1.jpg)
  
-  !https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/image/phone_home.png
+  ![](https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/image/phone_home.png)
   
-  !https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/image/phone_pool.png
+  ![](https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/image/phone_pool.png)
   
 ## :sparkles: 特性
 
