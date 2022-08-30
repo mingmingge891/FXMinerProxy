@@ -23,9 +23,7 @@
 
   ![](http://47.105.86.47/image/fxproxyminer/home1.jpg)
  
-  ![](https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/image/phone_home.png)
-  
-  ![](https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/image/phone_pool.png)
+  # 支持手机模式
   
 ## :sparkles: 特性
 
