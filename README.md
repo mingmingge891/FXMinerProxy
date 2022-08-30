@@ -1,7 +1,6 @@
 # FXMinerProxy
 
 我们现在发布V3版本项目地址:https://github.com/FxPool/FxMinerProxyV3
-TG群https://t.me/+NfbzlPy9ZBY1YmVh
 
 <h4 align="center">基于Golang高性能Pow挖矿代理中转服务器软件.</h4>
 <h4 align="center">支持ETH/ETC/BTC/LTC/RVN/CFX/TON/BEAM/ERG/BTG.</h4>
@@ -23,6 +22,10 @@ TG群https://t.me/+NfbzlPy9ZBY1YmVh
 </p>
 
   ![](http://47.105.86.47/image/fxproxyminer/home1.jpg)
+ 
+  !https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/image/phone_home.png
+  
+  !https://raw.githubusercontent.com/mingmingge891/FXMinerProxy/main/image/phone_pool.png
   
 ## :sparkles: 特性
 
